@@ -1,0 +1,131 @@
+:root {
+    --bg-color: #fdf6e3;
+    --pink: #ffafcc;
+    --dark: #333;
+}
+
+body {
+    background-color: var(--bg-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    background: white;
+    padding: 2rem;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    border: 8px solid white;
+    max-height: 85vh; 
+    overflow-y: auto; 
+    scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+    width: 6px;
+    display: block;
+}
+.container::-webkit-scrollbar-thumb {
+    background-color: #ffafcc;
+    border-radius: 10px;
+}
+.sticker-img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.05));
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    color: var(--dark);
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
+
+.wish-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #d63384;
+}
+
+button {
+    background: white;
+    border: 2px solid var(--dark);
+    padding: 10px 30px;
+    border-radius: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin: 5px;
+}
+
+button:active { transform: scale(0.9); }
+
+.btn-yes { background: var(--pink); border-color: var(--pink); color: white; }
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 15px 0;
+    flex-shrink: 0;
+}
+
+.btn-restart {
+    background: #ff85a2;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 133, 162, 0.4);
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.polaroid {
+    background: white;
+    padding: 8px 8px 15px 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transform: rotate(var(--angle)); /* Gives a messy, cute look */
+    transition: transform 0.3s ease;
+}
+
+.polaroid:hover {
+    transform: scale(1.1) rotate(0deg);
+    z-index: 10;
+}
+
+.polaroid img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain; 
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+}
+
+.polaroid span {
+    font-family: 'Dancing Script', cursive;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 5px;
+    color: #555;
+}
+
+.p1 { --angle: -3deg; }
+.p2 { --angle: 2deg; }
+.p3 { --angle: -2deg; }
+.p4 { --angle: 4deg; }
