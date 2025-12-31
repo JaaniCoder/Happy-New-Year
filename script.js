@@ -35,6 +35,21 @@ const pages = {
     }
 };
 
+const assetsToPreload = [
+    'assets/cat-intro.jpg', 'cat-gun.jpg', 'cat-heart.jpg', 
+    'cat-excited.jpg', 'cat-camera.webp', 'cat-with-glasses.jpg',
+    'pic1.jpeg', 'pic2.jpeg', 'pic3.jpeg', 'pic4.jpeg', 'pic5.jpeg', 'pic6.jpeg'
+];
+
+function preloadAssets() {
+    assetsToPreload.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+}
+
+preloadAssets();
+
 function showPage(pageKey, startMusic = false) {
     if(startMusic) {
         const music = document.getElementById('bg-music');
